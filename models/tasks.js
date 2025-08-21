@@ -1,7 +1,7 @@
-const { Timestamp } = require("bson");
 const mongoose = require("mongoose");
 const {Schema, model} = mongoose;
 
+//Defining the Schema for the task
 const TaskSchema = new Schema({
     title: {
         type: String,
@@ -19,5 +19,5 @@ const TaskSchema = new Schema({
     }
 }, {timestamps: true}
 );
-
+//Creating and exporting task model
 module.exports = model("Task",TaskSchema);
