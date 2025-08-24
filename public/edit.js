@@ -9,10 +9,9 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
 if (!id) {
-    window.location.href = '/'; // Redirect if no ID is provided
+    window.location.href = '/';
 }
 
-// --- Fetch a Single Task ---
 const fetchTask = async () => {
     try {
         const response = await fetch(`/api/v1/tasks/${id}`);
@@ -38,7 +37,7 @@ const fetchTask = async () => {
 
 fetchTask();
 
-// --- Update the Task ---
+//Update the Task
 editForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const newTitle = titleInput.value;

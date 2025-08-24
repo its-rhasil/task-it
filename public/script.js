@@ -7,7 +7,7 @@ const completedInput = document.getElementById('completed');
 const formAlert = document.querySelector('.form-alert');
 const searchInput = document.getElementById('search-input');
 
-// --- Fetch and Display All Tasks ---
+//Display All Tasks
 const showTasks = async () => {
     loadingText.style.display = 'block';
     try {
@@ -45,14 +45,13 @@ const showTasks = async () => {
 
 showTasks();
 
-// --- Create a New Task ---
+//Create a New Task
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const title = titleInput.value;
     const description = descriptionInput.value;
     const completed = completedInput.checked; // Reads true/false from the checkbox
 
-    // === DEBUGGING LINE ADDED HERE ===
     console.log('Sending this data to the server:', { title, description, completed });
 
     try {
@@ -74,7 +73,7 @@ taskForm.addEventListener('submit', async (e) => {
     setTimeout(() => { formAlert.textContent = ''; }, 3000);
 });
 
-// --- Delete a Task ---
+//Delete a Task
 tasksContainer.addEventListener('click', async (e) => {
     if (e.target.classList.contains('delete-btn')) {
         const id = e.target.dataset.id;
@@ -87,7 +86,7 @@ tasksContainer.addEventListener('click', async (e) => {
     }
 });
 
-// --- Search/Filter Tasks ---
+//Search/Filter Tasks
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
     const tasks = document.querySelectorAll('.task');
