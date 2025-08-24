@@ -9,6 +9,7 @@ require("dotenv").config()
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
+app.use(express.static("public"));
 app.use("/api/v1/tasks", tasks);
 app.get("/",(req,res)=>{
     res.send("<h1>Task-it API</h1>");

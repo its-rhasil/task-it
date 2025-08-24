@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-it Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Task-it</h1>
+
+        <form class="task-form" id="task-form">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="e.g., learn node.js" required>
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="e.g., complete the course by Friday">
+            </div>
+             <div class="form-control checkbox-control">
+                <label for="completed">Completed</label>
+                <input type="checkbox" id="completed">
+            </div>
+            <button type="submit" class="btn submit-btn">Add Task</button>
+        </form>
+
+        <p class="form-alert"></p>
+
+        <div class="search-container">
+             <input type="text" id="search-input" placeholder="Search tasks...">
+        </div>
+
+        <div class="tasks-container" id="tasks-container">
+            </div>
+        <p id="loading">Loading...</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
