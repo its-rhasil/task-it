@@ -29,6 +29,9 @@ const deleteTask = asyncWrap(async (req,res)=>{
 //Controller for retrieving all tasks
 const getAllTask = async (req,res)=>{
     const tasks = await Task.find();
+    if(tasks.length === 0){
+        res.status(200).json({message: "No Task available!"});
+    }
     res.status(200).json({tasks});
 }
 //Controller for retrieving specific task
