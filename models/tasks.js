@@ -12,11 +12,11 @@ const TaskSchema = new Schema({
         type: String,
         default: ""
     },
-    status: {
-        type: String,
-        enum: ["to-do","completed"],
-        default: "to-do"
+    completed: {
+        type: Boolean,
+        default: false,
     }
+
 }, {timestamps: true}
 );
 //Creating and exporting task model
