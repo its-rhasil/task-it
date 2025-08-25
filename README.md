@@ -19,17 +19,4 @@ It provides full **CRUD operations** and includes **clean error handling** for b
 - **Database:** MongoDB (Mongoose ODM)  
 - **Frontend:** Minimal HTML, CSS, JavaScript  
 
----
-
-## 📂 Project Structure
-task-it-api/
-├── controllers/ # Business logic (task controllers)
-├── database/ # Database connection
-├── errors/ # Custom error handlers
-├── middleware/ # Middleware (logging, error handling etc.)
-├── models/ # Mongoose models
-├── public/ # Minimal frontend files (HTML, CSS, JS)
-├── routes/ # Express routes
-├── server.js # Entry point
-└── package.json
 
