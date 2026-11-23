@@ -17,9 +17,6 @@ app.use("/api", async (req,res,next)=>{
     next();
 });
 app.use("/api/v1/tasks", tasks);
-app.get("/",(req,res)=>{
-    res.send("<h1>Task-it API</h1>");
-})
 app.use(error_handler);
 app.use(notFound);
 
