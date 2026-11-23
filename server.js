@@ -22,7 +22,7 @@ const start = async ()=>{
         app.listen(PORT,()=>console.log(`Server is running on the port ${PORT}`))
     } catch (error) {
         //App crashes if the connection fails!
-        console.log("Connection Failed!");
+        console.log(`Connection Failed!: ${error}`);
         process.exit(1);
     }
 };
