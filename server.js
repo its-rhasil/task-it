@@ -1,4 +1,5 @@
 require("dotenv").config()
+const path = require("path");
 const express = require("express");
 const app = express()
 const tasks = require("./routes/routes");
@@ -17,6 +18,13 @@ app.use("/api", async (req,res,next)=>{
     next();
 });
 app.use("/api/v1/tasks", tasks);
+// On Vercel, "/" reaches this function instead of the static files,
+// so serve the frontend explicitly (falling back to the CDN copy).
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"public","index.html"),(err)=>{
+        if(err && !res.headersSent) res.redirect("/index.html");
+    });
+})
 app.use(error_handler);
 app.use(notFound);
 
